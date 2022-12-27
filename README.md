@@ -59,12 +59,11 @@ python ./Dataprocess/Criteo/scale.py
 Here's how to train GraphFM on Criteo dataset.
 ```
 CUDA_VISIBLE_DEVICES=$GPU python -m code.train \
---model_type GraphFM \
+--model_type EFANet \
                         --data_path $YOUR_DATA_PATH --data Criteo \
                         --blocks 3 --heads 2 --block_shape "[64, 64, 64]" \
-                        --ks "[39, 20, 5]" \
                         --is_save --has_residual \
-                        --save_path ./models/GraphFM/Criteo/b3h2_64x64x64/ \
+                        --save_path ./models/EFANet/Criteo/b3h2_64x64x64/ \
                         --field_size 39  --run_times 1 \
                         --epoch 2 --batch_size 1024 \
 ```
@@ -72,12 +71,11 @@ CUDA_VISIBLE_DEVICES=$GPU python -m code.train \
 Here's how to train GraphFM on Avazu dataset.
 ```
 CUDA_VISIBLE_DEVICES=$GPU python -m code.train \
---model_type GraphFM \
+--model_type EFANet \
                         --data_path $YOUR_DATA_PATH --data Avazu \
                         --blocks 3 --heads 2 --block_shape "[64, 64, 64]" \
-                        --ks "[23, 10, 2]" \
                         --is_save --has_residual \
-                        --save_path ./models/GraphFM/Avazu/b3h2_64x64x64/ \
+                        --save_path ./models/EFANet/Avazu/b3h2_64x64x64/ \
                         --field_size 23  --run_times 1 \
                         --epoch 2 --batch_size 1024 \
 ```
